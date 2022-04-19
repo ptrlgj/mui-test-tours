@@ -31,19 +31,19 @@ const theme = createTheme({
         }
     }
 })
-function TourCard() {
+function TourCard({ name, duration, rating, numberOfReviews, price, image}) {
   return (
       <Grid item xs={3}>
         <ThemeProvider theme={theme}>
             <Paper elevation={3} >
                 <img 
-                    src="https://cdn.getyourguide.com/img/location/5ce265372f802.jpeg/88.jpg"  
-                    alt="fall" 
+                    src={image}
+                    alt={name}
                     className='img'
                     />
                 <Box paddingX={1}>
                     <Typography variant='subtitle1' component='h2'>
-                        Immerse into the Falls
+                        {name}
                     </Typography>
                     <Box 
                         sx={{
@@ -55,7 +55,7 @@ function TourCard() {
                             width: 12.5
                         }}/>
                         <Typography variant='body2' component='p' marginLeft={0.5}>
-                            5 Hours
+                            {duration} hours
                         </Typography>
                     </Box>
                     <Box 
@@ -67,21 +67,21 @@ function TourCard() {
                         >
                         <Rating 
                             name='read-only'
-                            value={4.5}
+                            value={rating}
                             precision={0.5}
                             size="small"
                             readOnly
                             />
                         <Typography variant='body2' component='p' marginLeft={0.5}>
-                            4.5
+                            {rating}
                         </Typography>
                         <Typography variant='body3' component='p' marginLeft={1.5}>
-                            (655 reviews)
+                            ({numberOfReviews} reviews)
                         </Typography>
                     </Box>
                     <Box>
                         <Typography variant='h6' component='h3' marginTop={0}>
-                            From $132
+                            From ${price}
                         </Typography>
                     </Box>
                 </Box>
