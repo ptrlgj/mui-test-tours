@@ -3,7 +3,9 @@ import {Container, Typography} from '@mui/material'
 import QuiltedImageList from '../components/ImageCollage'
 import Box from '@mui/material/Box'
 import CustomizedAccordions from '../components/Accordian'
-
+import Paper from '@mui/material/Paper'
+import BottomNavigation from '@mui/material/BottomNavigation'
+import BasicModal from '../components/Modal'
 function Tour() {
   return (
     <Container sx={{width: 900}}>
@@ -30,12 +32,17 @@ function Tour() {
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, asperiores omnis. Voluptas nulla explicabo, iure corrupti similique saepe, est recusandae, at eum laborum ipsa natus numquam voluptate! Necessitatibus quaerat quidem minus esse atque veritatis aspernatur cum obcaecati quibusdam, id temporibus?
             </Typography>
         </Box>
-        <Box>
+        <Box marginBottom={10}>
             <Typography variant="h6" component="h4" marginTop={3} marginBottom={2}>
                 Frequently asked questions
             </Typography>
             <CustomizedAccordions />
         </Box>
+        <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+            <BottomNavigation>
+                <BasicModal />
+            </BottomNavigation>
+        </Paper>
     </Container>
   )
 }
